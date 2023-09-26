@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    background-color: #F9F9F9;
+    position: relative;
+}
+
+.container{
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.button{
+    width: 100%;
+    padding: 12px 0;
+    border: 0;
+    outline: none;
+    background-color: #FF7020;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #FFAB08;
+    }
+
+    &:disabled{
+        background-color: #F2F2F3;
+        color: #ACACAC;
+        cursor: not-allowed; 
+    }
+}
+
+.count{
+    margin-left: auto;
+    width: 84px !important;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d2d2d2;
+    border-radius: 12px;
+
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        border-radius: 12px
+    }
+
+    &__minus, &__plus{
+        cursor: pointer;
+        height: 100%;
+        
+        &:hover{
+            background-color: darken($color: #d2d2d2, $amount: 10%);
+        }
+    }
+
+    &__number{
+        user-select: none;
+    }
+}
+
+.mask{
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    &.active{
+        display: block;
+    }
+}
+
+.close{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup{
+    width: 700px;
+    height: auto;
+    position:fixed !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 24px;
+}
+
+@media (max-width: 750px){
+    .popup{
+        width: 500px;
+    }
+}
+
+@media (max-width: 540px){
+    .popup{
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+}

@@ -1,0 +1,25 @@
+<div class="popup__product-info popup" [ngClass]="{active: isOpen}" *ngIf="productData">
+    <button class="close" (click)="close()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30" fill="none">
+            <rect x="7.07422" y="8.28247" width="1" height="20" transform="rotate(-45 7.07422 8.28247)" fill="#B1B1B1"/>
+            <rect x="7.78125" y="22.4246" width="1" height="20" transform="rotate(-135 7.78125 22.4246)" fill="#B1B1B1"/>
+        </svg>
+    </button>
+    <h3 class="info__title">{{productData.name}}</h3>
+    <div class="info__head">
+        <img src="assets/images/{{productData.image}}" alt="Burger" class="info__img">
+        <div>
+            <p class="info__description">{{productData.description}}</p>
+            <p class="info__text">Склад: </p>
+            <ul class="info__contents">
+                <li *ngFor="let item of productData.contents">{{item}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="info__bottom">
+        <div class="info__bottom-wrapper">
+            <button class="info__add-button button" (click)="addToBasket(productData)">Додати</button>
+        </div>
+        <p class="info__price">{{productData.price}} грн</p>
+    </div>  
+</div>

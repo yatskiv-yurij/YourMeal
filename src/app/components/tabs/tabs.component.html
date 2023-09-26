@@ -1,0 +1,42 @@
+<div class="tabs">
+    <div class="container">
+        <swiper-container #swiperRef>
+            <swiper-slide>
+                <div class="tab active" (click)="selectTab($event, 'burger', 'Бургери')">
+                    <img src="assets/images/burger.png" alt="burger" class="tab__img">
+                    <span class="tab__text">Бургери</span>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="tab" (click)="selectTab($event, 'appetizer', 'Закуски')">
+                    <img src="assets/images/appetizer.png" alt="appetizer" class="tab__img">
+                    <span class="tab__text">Закуски</span>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="tab" (click)="selectTab($event, 'hot-dog', 'Хот-доги')">
+                    <img src="assets/images/hot-dog.png" alt="hot-dog" class="tab__img">
+                    <span class="tab__text">Хот-доги</span>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="tab" (click)="selectTab($event, 'shawarma', 'Шаурма')">
+                    <img src="assets/images/shawarma.png" alt="shawarma" class="tab__img">
+                    <span class="tab__text">Шаурма</span>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="tab" (click)="selectTab($event, 'pizza', 'Піцца')">
+                    <img src="assets/images/pizza.png" alt="pizza" class="tab__img">
+                    <span class="tab__text">Піцца</span>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="tab" (click)="selectTab($event, 'dessert', 'Десерти')">
+                    <img src="assets/images/dessert.png" alt="dessert" class="tab__img">
+                    <span class="tab__text">Десерти</span>
+                </div>
+            </swiper-slide>
+        </swiper-container>
+    </div>
+</div>

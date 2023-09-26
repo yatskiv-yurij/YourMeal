@@ -1,0 +1,40 @@
+<div class="delivery popup" [ngClass]="{active: isOpen}">
+    <div class="delivery__wrapper">
+        <button class="close" (click)="close()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30" fill="none">
+                <rect x="7.07422" y="8.28247" width="1" height="20" transform="rotate(-45 7.07422 8.28247)" fill="#B1B1B1"/>
+                <rect x="7.78125" y="22.4246" width="1" height="20" transform="rotate(-135 7.78125 22.4246)" fill="#B1B1B1"/>
+            </svg>
+        </button>
+        <div class="delivery__img-block">
+            <img src="assets/images/burger-delivery.svg" alt="Burger" class="delivery__img">
+        </div>
+        <div class="delivery__content">
+            <h3 class="delivery__title">Доставка</h3>
+            <div class="delivery__form" [formGroup]="form">
+                <input type="text" name="name" id="name" placeholder="Ваше ім'я" class="delivery__name delivery__input" formControlName="name">
+                <input type="text" name="phone" id="phone" placeholder="Телефон" class="delivery__phone delivery__input" formControlName="phone">
+                <div class="delivery__choice">
+                    <label for="pickup" class="delivery__lbl">
+                        <input type="radio" name="delivery" id="pickup" value="false" (change)="onChange($event)" checked>
+                        <span>Самовивіз</span>
+                    </label>
+                </div>
+                <div class="delivery__choice">
+                    <label for="delivery" class="delivery__lbl">
+                        <input type="radio" name="delivery" id="delivery" value="true" (change)="onChange($event)">
+                        <span>Доставка</span>
+                    </label>
+                </div>
+                <div *ngIf="isDelivery">
+                    <input type="text" name="address" id="address" placeholder="Адреса"  class="delivery__address delivery__input" formControlName="address">
+                    <div class="delivery__block">
+                        <input type="text" name="floor" id="floor" placeholder="Поверх" class="delivery__floor delivery__input" formControlName="floor">
+                        <input type="text" name="intercome" id="intercome" placeholder="Домофон" class="delivery__intercome delivery__input" formControlName="intercome">
+                    </div>
+                </div>
+                <button class="delivery__apply button" (click)="submitOrder()" [disabled]="!form.valid">Оформити</button>
+            </div>
+        </div>
+    </div>
+</div>

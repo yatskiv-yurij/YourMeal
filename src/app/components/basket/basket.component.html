@@ -1,0 +1,37 @@
+<div class="basket">
+    <div class="basket__header" (click)="openBasket()">
+        <h5 class="basket__title">Корзина</h5>
+        <div class="basket__count">
+            <span>{{totalAmount}}</span>
+        </div>
+    </div>
+    <div class="basket__info" [ngClass]="{'active': isOpen}">
+        <div class="basket__items">
+            <div class="basket__product" *ngFor="let product of basketData; let i=index">
+                <img class="basket__product-img" [src]="pathImage + product.infoProduct.image" alt="burger">
+                <div class="basket__product-info">
+                    <p class="basket__product-name">{{product.infoProduct.name}}</p>
+                    <p class="basket__product-weight">{{product.infoProduct.gram}} г</p>
+                    <p class="basket__product-price">{{product.infoProduct.price}} грн</p>
+                </div>
+                <div class="count">
+                    <div class="count__minus" (click)="substractCount(product.infoProduct.id)">
+                        <span>-</span>
+                    </div>
+                    <div class="count__number">
+                        <span>{{product.count}}</span>
+                    </div>
+                    <div class="count__plus" (click)="addCount(product.infoProduct.id)">
+                        <span>+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="basket__general">
+            <p class="basket__general-text">Загалом</p>
+            <p class="basket__general-price">{{totalPrice}} грн</p>
+        </div>
+        <button class="basket__order button" (click)="openOrder()">Оформити замовлення</button>
+        <span class="basket__close" (click)="closeBasket()">Звернути</span>
+    </div>
+</div>

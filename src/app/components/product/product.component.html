@@ -1,0 +1,11 @@
+<div class="products__wrapper">
+    <div class="product" *ngFor="let product of selectedData">
+        <img [src]="pathImage + product.image" alt="Бургер" class="product__img">
+        <p class="product__price">{{product.price}} грн</p>
+        <p class="product__name">{{product.name}}</p>
+        <div class="product__bottom">
+            <p class="product__weight">{{product.gram}}г</p>
+            <button class="product__add-basket button" (click)="openInfo(true, product.id)">Додати</button>
+        </div>
+    </div>
+</div>

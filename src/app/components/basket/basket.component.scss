@@ -1,0 +1,130 @@
+.basket{
+    width: 300px;
+    padding: 24px 16px;
+    background-color: #fff;
+    border-radius: 18px;
+    margin-top: 84px;
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    &__title{
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    &__count{
+        width: 41px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #d2d2d2;
+        border-radius: 6px;
+
+        span{
+            font-size: 12px;
+            font-weight: 400;
+        }
+    }
+
+    &__product{
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #F2F2F3;
+
+        &:last-child{
+            border-bottom: 1px solid #F2F2F3;
+        }
+
+        &-img{
+            width: 64px;
+            height: 52px;
+            border-radius: 8px;
+        } 
+
+        &-info{
+            margin-left: 6px;
+            width: calc(100% - 160px);
+        }
+
+        &-name{
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        &-weight{
+            font-size: 12px;
+            font-weight: 400;
+            color: #B1B1B1; 
+        }
+
+        &-price{
+            font-size: 12px;
+            font-weight: 400;
+            margin-top: 6px;
+        }
+    }
+
+    &__general{
+        margin: 16px 0 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-text, &-price{
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    &__close{
+        display: none;
+        margin-top: 20px;
+        color: #B1B1B1;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px){
+    .basket{
+        position: relative;
+        &__header{
+            margin-bottom: 0;
+            cursor: pointer;
+            
+        }
+        &__info{
+            display: none;
+            background-color: #fff;
+            width: 100%;
+            padding: 0 16px 24px;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+
+
+            &.active{
+                display: block;
+                position: absolute;
+                top: calc(100% - 15px);
+                left: 0;
+                z-index: 2;
+            }
+        }
+
+        &__close{
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 350px){
+    .basket{
+        width: 100%;
+    }
+}

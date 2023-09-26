@@ -1,0 +1,17 @@
+<app-header></app-header>
+<app-tabs></app-tabs>
+<main class="main">
+    <div class="container">
+        <div class="main__wrapper">
+            <app-basket></app-basket>
+            <div class="products">
+                <h3 class="products__title">{{productsTitle}}</h3>
+                <app-product></app-product>
+            </div>
+        </div>
+    </div>
+</main>
+<app-footer></app-footer>
+<div class="mask" [ngClass]="{active: isMask}"></div>
+<app-popup-info></app-popup-info>
+<app-popup-delivery></app-popup-delivery>

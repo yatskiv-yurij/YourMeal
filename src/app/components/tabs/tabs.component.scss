@@ -1,0 +1,49 @@
+.tabs{
+    margin: 40px 0 50px 0;
+
+    .swiper-slide{
+        width: auto;
+    }
+
+    .tab{
+        display: flex;
+        align-items: center;
+        padding: 8px 14px;
+        background-color: #fff;
+        border-radius: 50px;
+        cursor: pointer;
+        border: 1px solid transparent;
+
+        &:hover{
+            border: 1px solid #F86310;
+        }
+
+        &.active{
+            background-color: #FFAB08;
+        }
+
+        &__img{
+            margin-right: 8px;
+            position: relative;
+        }
+    }
+
+    swiper-container{
+        z-index: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .tabs{
+        overflow: hidden;
+
+        .container{
+            padding: 0;
+            overflow: visible;
+        }
+
+        swiper-container{
+            overflow:visible;
+        } 
+    }
+}
